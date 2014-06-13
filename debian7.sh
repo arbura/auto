@@ -98,7 +98,7 @@ cd /etc/openvpn/
 wget -O /etc/openvpn/1194-client.ovpn "https://raw.github.com/arbura/auto/master/1194-client.conf"
 sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
 PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
-useradd -M -s /bin/false YurisshOS
+useradd -M -s /bin/false users
 echo "users:$PASS" | chpasswd
 echo "username" >> pass.txt
 echo "password" >> pass.txt
