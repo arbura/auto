@@ -99,7 +99,7 @@ wget -O /etc/openvpn/1194-client.ovpn "https://raw.github.com/arbura/auto/master
 sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
 PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
 useradd -M -s /bin/false YurisshOS
-echo "arbura:$PASS" | chpasswd
+echo "users:$PASS" | chpasswd
 echo "username" >> pass.txt
 echo "password" >> pass.txt
 tar cf client.tar 1194-client.ovpn pass.txt
@@ -205,6 +205,7 @@ wget -O userlogin.sh "https://raw.github.com/arbura/auto/master/userlogin.sh"
 wget -O userexpired.sh "https://raw.github.com/arbura/auto/master/userexpired.sh"
 wget -O userlimit.sh "https://raw.github.com/arbura/auto/master/userlimit.sh"
 wget -O expire.sh "https://raw.github.com/arbura/auto/master/expire.sh"
+wget -O adduser.sh "https://raw.github.com/arbura/auto/master/adduser.sh"
 #wget -O autokill.sh "https://raw.github.com/arbura/auto/master/autokill.sh"
 wget -O /etc/issue.net "https://raw.github.com/arbura/auto/master/banner"
 echo "@reboot root /root/userexpired.sh" > /etc/cron.d/userexpired
@@ -219,6 +220,7 @@ chmod +x ps_mem.py
 chmod +x userlogin.sh
 chmod +x userexpired.sh
 chmod +x userlimit.sh
+chmod +x adduser.sh
 #chmod +x autokill.sh
 chmod +x dropmon
 chmod +x expire.sh
@@ -272,7 +274,8 @@ echo "./speedtest_cli.py --share"  | tee -a log-install.txt
 echo "./bench-network.sh"  | tee -a log-install.txt
 echo "./userlogin.sh" | tee -a log-install.txt
 echo "./userexpired.sh" | tee -a log-install.txt
-#echo "./userlimit.sh 2 [ini utk melimit max 2 login]" | tee -a log-install.txt
+echo "./userlimit.sh 2 [ini utk melimit max 2 login]" | tee -a log-install.txt
+echo "./adduser.sh" | tee -a log-install.txt
 echo "sh dropmon [port] contoh: sh dropmon 443" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Fitur lain"  | tee -a log-install.txt
