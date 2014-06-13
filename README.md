@@ -44,4 +44,4 @@ VPS Akan Reboot Tiap 6 Jam Sekali
 ===========================
 
                                               Modified by arbura
-                                Thanks to Original Creator Kang Arie Wijayanto, Mikodemos, & Yurissh Opensource
+                Thanks to Original Creator Kang Arie Wijayanto, Mikodemos, & Yurissh Opensource
