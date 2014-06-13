@@ -15,4 +15,4 @@ JUMLAH="$(awk -F: '$3 >= 1000 && $1 != "nobody" {print $1}' /etc/passwd | wc -l)
 echo "-------------------------------"
 echo "Jumlah akun: $JUMLAH user"
 echo "-------------------------------"
-echo -e "\e[1;33;44m[ Modified by YuriSSH OS]\e[0m"
+echo -e "\e[1;33;44m[ ARBURA | 0838-513-99-153 | 745D1F66 ]\e[0m"

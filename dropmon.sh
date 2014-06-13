@@ -42,7 +42,8 @@ do
     fi
 done
 echo "---------------------------------------------------------------" 
-echo "                        Script Modified by YurisshOS   " 
+echo -e "\e[1;33;44m[ ARBURA | 0838-513-99-153 | 745D1F66 ]\e[0m"
+echo "                        thanks to YurisshOS   " 
 else
 echo "  Gunakan perintah ./dropmon.sh [port]"
 echo "  contoh : ./dropmon.sh 443"
