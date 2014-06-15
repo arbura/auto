@@ -74,7 +74,8 @@ exit 0
 *)
   echo " gunakan perintah userlmtop 1 untuk limit 1 login saja"
   echo " atau userlmtop 2  untuk melimit max 2 login"
-  echo " Modified by Yurissh OS"     
+  echo -e "\e[1;33;44m[ ARBURA | 0838-513-99-153 | 745D1F66 ]\e[0m"
+  echo " thanks to Yurissh OS"     
 rm -f /tmp/pid
 rm -f /tmp/pid2
 rm -f /tmp/pids
