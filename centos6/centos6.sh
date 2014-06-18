@@ -161,8 +161,9 @@ LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
 cd
 
 # setting port ssh
-sed -i '/Port 22/a Port 80' /etc/ssh/sshd_config
-sed -i 's/Port 22/Port  22/g' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 109' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 110' /etc/ssh/sshd_config
+sed -i 's/#Port 22/Port  22/g' /etc/ssh/sshd_config
 service sshd restart
 chkconfig sshd on
 
