@@ -227,8 +227,6 @@ wget -O userlimit.sh "https://raw.github.com/arbura/auto/master/userlimit.sh"
 wget -O expire.sh "https://raw.github.com/arbura/auto/master/expire.sh"
 wget -O adduser.sh "https://raw.github.com/arbura/auto/master/adduser.sh"
 #wget -O autokill.sh "https://raw.github.com/arbura/auto/master/autokill.sh"
-wget -O dropmon "https://raw.github.com/arbura/auto/master/dropmon.sh"
-wget -O /etc/issue.net "https://raw.github.com/arbura/auto/master/banner"
 #echo "*/10 * * * * root /root/userexpired.sh" >> /etc/cron.d/userexpired
 #echo "0 */6 * * * root /sbin/reboot" > /etc/cron.d/reboot
 chmod +x bench-network.sh
@@ -239,7 +237,6 @@ chmod +x userexpired.sh
 chmod +x userlimit.sh
 chmod +x adduser.sh
 #chmod +x autokill.sh
-chmod +x dropmon
 chmod +x expire.sh
 
 
@@ -306,7 +303,6 @@ echo "./bench-network.sh"  | tee -a log-install.txt
 echo "./userlogin.sh"  | tee -a log-install.txt
 echo "./userexpired.sh >> auto running tiap 10jam"  | tee -a log-install.txt
 echo "./adduser.sh" | tee -a log-install.txt
-echo "sh dropmon [port] contoh: sh dropmon 443" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Fitur lain"  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
