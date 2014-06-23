@@ -223,13 +223,24 @@ wget -O bench-network.sh "https://raw.github.com/arbura/auto/master/centos6/benc
 wget -O ps_mem.py "https://raw.github.com/pixelb/ps_mem/master/ps_mem.py"
 wget -O userlogin.sh "https://raw.github.com/arbura/auto/master/centos6/userlogin.sh"
 wget -O userexpired.sh "https://raw.github.com/arbura/auto/master/centos6/userexpired.sh"
+wget -O userlimit.sh "https://raw.github.com/arbura/auto/master/userlimit.sh"
+wget -O expire.sh "https://raw.github.com/arbura/auto/master/expire.sh"
+wget -O adduser.sh "https://raw.github.com/arbura/auto/master/adduser.sh"
+#wget -O autokill.sh "https://raw.github.com/arbura/auto/master/autokill.sh"
+wget -O dropmon "https://raw.github.com/arbura/auto/master/dropmon.sh"
+wget -O /etc/issue.net "https://raw.github.com/arbura/auto/master/banner"
+#echo "*/10 * * * * root /root/userexpired.sh" >> /etc/cron.d/userexpired
+#echo "0 */6 * * * root /sbin/reboot" > /etc/cron.d/reboot
 chmod +x bench-network.sh
 chmod +x speedtest_cli.py
 chmod +x ps_mem.py
 chmod +x userlogin.sh
 chmod +x userexpired.sh
-echo "*/10 * * * * root /root/userexpired.sh" >> /etc/cron.d/userexpired
-echo "0 */6 * * * root /sbin/reboot" > /etc/cron.d/reboot
+chmod +x userlimit.sh
+chmod +x adduser.sh
+#chmod +x autokill.sh
+chmod +x dropmon
+chmod +x expire.sh
 
 
 # cron
@@ -294,6 +305,8 @@ echo "./speedtest_cli.py --share"  | tee -a log-install.txt
 echo "./bench-network.sh"  | tee -a log-install.txt
 echo "./userlogin.sh"  | tee -a log-install.txt
 echo "./userexpired.sh >> auto running tiap 10jam"  | tee -a log-install.txt
+echo "./adduser.sh" | tee -a log-install.txt
+echo "sh dropmon [port] contoh: sh dropmon 443" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Fitur lain"  | tee -a log-install.txt
 echo "----------"  | tee -a log-install.txt
