@@ -226,7 +226,7 @@ A4GBAL3ScsXaFFuBqkS8bDqDUkx2hYM2iAYx9ZEuz8DOgtenQiNcyety4YzWSE5b
 T0G3VTuVrzgSMZV1unfbCHk6XR4VT3MmmoTl+97cmmMZgWV0
 -----END CERTIFICATE-----
 1194.conf0000644000175000017500000000072012262554770013370 0ustar  arieonlinearieonlineport 1194
-proto udp
+proto tcp
 dev tap
 
 ca /etc/openvpn/keys/ca.crt
