@@ -44,7 +44,7 @@ apt-get -y install nginx php5-fpm php5-cli
 
 # install essential package
 echo "mrtg mrtg/conf_mods boolean true" | debconf-set-selections
-apt-get -y install bmon iftop htop nmap axel nano iptables traceroute sysv-rc-conf dnsutils bc nethogs openvpn vnstat less screen psmisc apt-file whois ptunnel ngrep mtr git zsh mrtg snmp snmpd snmp-mibs-downloader unzip unrar rsyslog debsums rkhunter
+apt-get -y install bmon iftop htop nmap axel nano iptables traceroute sysv-rc-conf dnsutils bc nethogs less screen psmisc apt-file whois ptunnel ngrep mtr git zsh snmp snmpd snmp-mibs-downloader unzip unrar rsyslog debsums rkhunter
 apt-get -y install build-essential
 
 # disable exim
@@ -55,8 +55,8 @@ sysv-rc-conf exim4 off
 apt-file update
 
 # setting vnstat
-vnstat -u -i venet0
-service vnstat restart
+#vnstat -u -i venet0
+#service vnstat restart
 
 # install screenfetch
 cd
@@ -80,31 +80,31 @@ service php5-fpm restart
 service nginx restart
 
 # install openvpn
-wget -O /etc/openvpn/openvpn.tar "https://raw.github.com/arbura/auto/master/openvpn-debian.tar"
-cd /etc/openvpn/
-tar xf openvpn.tar
-wget -O /etc/openvpn/1194.conf "https://raw.github.com/arbura/auto/master/1194.conf"
-service openvpn restart
-sysctl -w net.ipv4.ip_forward=1
-sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
-wget -O /etc/iptables.up.rules "https://raw.github.com/arbura/auto/master/iptables.up.rules"
-sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
-sed -i $MYIP2 /etc/iptables.up.rules;
-iptables-restore < /etc/iptables.up.rules
-service openvpn restart
+#wget -O /etc/openvpn/openvpn.tar "https://raw.github.com/arbura/auto/master/openvpn-debian.tar"
+#cd /etc/openvpn/
+#tar xf openvpn.tar
+#wget -O /etc/openvpn/1194.conf "https://raw.github.com/arbura/auto/master/1194.conf"
+#vservice openvpn restart
+#sysctl -w net.ipv4.ip_forward=1
+#sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
+#wget -O /etc/iptables.up.rules "https://raw.github.com/arbura/auto/master/iptables.up.rules"
+#sed -i '$ i\iptables-restore < /etc/iptables.up.rules' /etc/rc.local
+#sed -i $MYIP2 /etc/iptables.up.rules;
+#iptables-restore < /etc/iptables.up.rules
+#service openvpn restart
 
 # configure openvpn client config
-cd /etc/openvpn/
-wget -O /etc/openvpn/1194-client.ovpn "https://raw.github.com/arbura/auto/master/1194-client.conf"
-sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
-PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
+#cd /etc/openvpn/
+#wget -O /etc/openvpn/1194-client.ovpn "https://raw.github.com/arbura/auto/master/1194-client.conf"
+#sed -i $MYIP2 /etc/openvpn/1194-client.ovpn;
+#PASS=`cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 15 | head -n 1`;
 useradd -M -s /bin/false users
-echo "users:$PASS" | chpasswd
-echo "username" >> pass.txt
-echo "password" >> pass.txt
-tar cf client.tar 1194-client.ovpn pass.txt
-cp client.tar /home/vps/public_html/
-cd
+#echo "users:$PASS" | chpasswd
+#echo "username" >> pass.txt
+#echo "password" >> pass.txt
+#tar cf client.tar 1194-client.ovpn pass.txt
+#cp client.tar /home/vps/public_html/
+#cd
 
 # install badvpn
 wget -O /usr/bin/badvpn-udpgw "https://raw.github.com/arbura/auto/master/badvpn-udpgw"
@@ -181,10 +181,10 @@ cd
 apt-get -y install fail2ban;service fail2ban restart
 
 # install squid3
-apt-get -y install squid3
-wget -O /etc/squid3/squid.conf "https://raw.github.com/arbura/auto/master/squid3.conf"
-sed -i $MYIP2 /etc/squid3/squid.conf;
-service squid3 restart
+#apt-get -y install squid3
+#wget -O /etc/squid3/squid.conf "https://raw.github.com/arbura/auto/master/squid3.conf"
+#sed -i $MYIP2 /etc/squid3/squid.conf;
+#service squid3 restart
 
 # install webmin
 cd
