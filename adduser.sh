@@ -22,7 +22,7 @@ if [ $(id -u) -eq 0 ]; then
         usermod $username -e `date -d "30 days" +"%Y-%m-%d"`
         [ $? -eq 0 ] && echo "User has been added to system!" || echo "Failed to add a user!"
     fi
-    echo -e "\e[1;33;44m[ ARBURA | 0838-513-99-153 | 745D1F66 ]\e[0m"
+    echo -e "\e[1;33;44m[ ARBURA | 085932699226 ]\e[0m"
 else
     echo "Only root may add a user to the system"
     exit 2
