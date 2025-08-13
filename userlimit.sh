@@ -75,7 +75,7 @@ exit 0
 *)
   echo " gunakan perintah ./userlimit.sh 1 untuk limit 1 login saja"
   echo " atau ./userlimit.sh 2  untuk melimit max 2 login"  
-echo -e "\e[1;33;44m[ ARBURA | 0838-513-99-153 | 745D1F66 ]\e[0m" 
+echo -e "\e[1;33;44m[ ARBURA | 085932699226 | 745D1F66 ]\e[0m" 
 rm -f /tmp/pid
 rm -f /tmp/pid2
 rm -f /tmp/pids
